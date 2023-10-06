@@ -27,7 +27,7 @@ const ProfilePage = ({ user }: Props) => (
                     />
                     </Link>
                     <Link href={`mailto:${user?.email}`}>
-                        <Button title="Hire Me" leftIcon="/email.svg" />
+                        <Button title="Message" leftIcon="/email.svg" />
                     </Link>
                 </div>
             </div>

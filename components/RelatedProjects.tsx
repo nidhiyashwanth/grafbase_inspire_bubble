@@ -6,11 +6,15 @@ import { type } from "os";
 import React from "react";
 
 type Props = {
-  userId: string;
-  projectId: string;
+  userId?: string;
+  projectId?: string;
 };
 
 const RelatedProjects = async ({ userId, projectId }: Props) => {
+  if (!userId || !projectId) {
+    console.error('Failed to fetch project information');
+    return null;
+  }
   const result = (await getUserProjects(userId)) as { user?: UserProfile };
 
   const filteredProjects = result?.user?.projects?.edges?.filter(
