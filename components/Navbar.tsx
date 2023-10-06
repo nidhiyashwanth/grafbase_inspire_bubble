@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { NavLinks } from "@/constants";
+import { NavLinks } from "@/constant";
 import { getCurrentUser } from "@/lib/session";
 
 import AuthProviders from "./AuthProviders";
@@ -16,9 +16,9 @@ const Navbar = async () => {
       <div className='flex-1 flexStart gap-10'>
         <Link href='/'>
           <Image
-            src='/inpire_bubble.png'
-            width={50}
-            height={50}
+            src='/logo.svg'
+            width={116}
+            height={43}
             alt='logo'
           />
         </Link>
