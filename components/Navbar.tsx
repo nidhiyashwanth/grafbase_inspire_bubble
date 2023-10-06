@@ -1,43 +1,44 @@
-import { NavLinks } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import AuthProviders from "./AuthProviders";
+
+import { NavLinks } from "@/constants";
 import { getCurrentUser } from "@/lib/session";
 
+import AuthProviders from "./AuthProviders";
+import Button from "./Button";
+import ProfileMenu from "./ProfileMenu";
+
 const Navbar = async () => {
-  const session = await getCurrentUser();
+  const session = await getCurrentUser()
+
   return (
-    <nav className="flexBetween navbar">
-      <div className="flex-1 flexStart gap-10">
-        <Link href="/">
+    <nav className='flexBetween navbar'>
+      <div className='flex-1 flexStart gap-10'>
+        <Link href='/'>
           <Image
-            src="./logo_inspire_bubble.svg"
-            width={200}
-            height={200}
-            alt="InspireBubble"
+            src='/inpire_bubble.png'
+            width={50}
+            height={50}
+            alt='logo'
           />
         </Link>
-        <ul className="xl:flex hidden text-sm gap-7">
+        <ul className='xl:flex hidden text-small gap-7'>
           {NavLinks.map((link) => (
-            <Link href={link.href} key={link.key}>
+            <Link href={link.href} key={link.text}>
               {link.text}
             </Link>
           ))}
         </ul>
       </div>
-      <div className="flexCenter gap-4">
+
+      <div className='flexCenter gap-4'>
         {session?.user ? (
           <>
-            {session?.user?.image && (
-              <Image
-                src={session?.user?.image}
-                width={40}
-                height={40}
-                className="rounded-full"
-                alt={session.user.name}
-              />
-            )}
-            <Link href="/create-project">Share your work</Link>
+            <ProfileMenu session={session} />
+
+            <Link href="/create-project">
+              <Button title='Share work' />
+            </Link>
           </>
         ) : (
           <AuthProviders />
