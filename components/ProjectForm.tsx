@@ -113,7 +113,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
             <FormField
                 title="Title"
                 state={form.title}
-                placeholder="Flexibble"
+                placeholder="Inspire Bubble"
                 setState={(value) => handleStateChange('title', value)}
             />
 

@@ -16,8 +16,8 @@ const Navbar = async () => {
       <div className='flex-1 flexStart gap-10'>
         <Link href='/'>
           <Image
-            src='/logo.svg'
-            width={116}
+            src='/logo.png'
+            width={80}
             height={43}
             alt='logo'
           />
