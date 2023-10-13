@@ -129,15 +129,15 @@ const ProjectForm = ({ type, session, project }: Props) => {
                 type="url"
                 title="Website URL"
                 state={form.liveSiteUrl}
-                placeholder="https://jsmastery.pro"
+                placeholder="https://inspire-bubble.vercel.app"
                 setState={(value) => handleStateChange('liveSiteUrl', value)}
             />
 
             <FormField
                 type="url"
-                title="GitHub URL"
+                title="Social Link"
                 state={form.githubUrl}
-                placeholder="https://github.com/adrianhajdin"
+                placeholder="https://github.com/nidhiyashwanth"
                 setState={(value) => handleStateChange('githubUrl', value)}
             />
 
