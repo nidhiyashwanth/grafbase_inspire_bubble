@@ -142,7 +142,6 @@ export const projectsQueryWithCategory = `
     }
   }
 `;
-
 export const projectsQueryWithoutCategory = `
   query getProjects($endcursor: String) {
     projectSearch(first: 8, after: $endcursor) {
